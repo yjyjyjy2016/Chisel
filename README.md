@@ -4,7 +4,8 @@ Chisel is a deep learning framework for partitioning complex protein assemblies 
 
 ## Architecture
 
-<img width="9070" height="9070" alt="发图final_03" src="https://github.com/user-attachments/assets/eaf8dc07-a3ad-4de6-b7e1-2f85c30aae51" />
+
+<img width="8784" height="5558" alt="fig01" src="https://github.com/user-attachments/assets/6c64fd3e-d989-48e6-a6a1-78a091e58c86" />
 
 
 ## Installation
