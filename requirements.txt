@@ -1,0 +1,29 @@
+# Chisel requirements
+# ====================
+# Core dependencies (REQUIRED)
+# ====================
+torch>=1.12.0          # PyTorch - model, training, tensors
+numpy>=1.21.0          # Numerical computing
+scipy>=1.7.0           # Hungarian matching (linear_sum_assignment), distance_matrix
+biopython>=1.79        # PDB/CIF parsing (Bio.PDB)
+pandas>=1.3.0          # Loss logging to CSV
+tqdm>=4.62.0           # Progress bars
+
+# ====================
+# GPD features (OPTIONAL - for 8-channel feature extraction)
+# Without these, featurisers.py falls back to zero-filled channels
+# ====================
+mdtraj>=1.9.7          # Molecular trajectory analysis (phi/psi, DSSP, centrality)
+networkx>=2.6          # Graph centrality computation (used by model_modified_v2)
+
+# ====================
+# Notes
+# ====================
+# - Python >= 3.8 required
+# - If using GPU: install PyTorch with CUDA support
+#   e.g. pip install torch --index-url https://download.pytorch.org/whl/cu118
+# - mdtraj and networkx are only needed for full 8-channel GPD features.
+#   The model will still run without them but with degraded feature quality.
+# - STRIDE executable is needed for secondary structure calculation.
+#   Set path via --stride_path argument or STRIDE_EXE environment variable.
+
