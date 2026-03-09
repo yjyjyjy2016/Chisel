@@ -42,22 +42,22 @@ pip install torch --index-url https://download.pytorch.org/whl/cu118
 
 ```bash
 # Fast inference (R=1, default)
-python predicttime.py --model_path saved_models/best_model.pt --pdb_path protein.pdb
+python predict.py --model_path saved_models/best_model.pt --pdb_path protein.pdb
 
 # Full inference (attention + VGAE + pLDDT + boundary on final round)
-python predicttime.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --full
+python predict.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --full
 
 # Batch prediction on a directory
-python predicttime.py --model_path saved_models/best_model.pt --pdb_dir /path/to/pdbs/
+python predict.py --model_path saved_models/best_model.pt --pdb_dir /path/to/pdbs/
 
 # Use GPU with fp16
-python predicttime.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --device cuda --fp16
+python predict.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --device cuda --fp16
 
 # Save results to file
-python predicttime.py --model_path saved_models/best_model.pt --pdb_dir /path/to/pdbs/ --output_file results.txt
+python predict.py --model_path saved_models/best_model.pt --pdb_dir /path/to/pdbs/ --output_file results.txt
 
 # Full mode with VGAE-refined adjacency and verbose output
-python predicttime.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --full --use_refined --verbose
+python predict.py --model_path saved_models/best_model.pt --pdb_path protein.pdb --full --use_refined --verbose
 ```
 
 ### Inference Modes
@@ -117,4 +117,5 @@ Both modes use the same RefinedModel checkpoint:
 ## License
 
 MIT License
+
 
