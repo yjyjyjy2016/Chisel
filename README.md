@@ -38,6 +38,17 @@ pip install torch --index-url https://download.pytorch.org/whl/cu118
 
 > Without `mdtraj` and `networkx`, the model still runs but with degraded feature quality (channels 2-6 zero-filled).
 
+### Download Pre-trained Model
+
+Before running inference, you need to download the pre-trained model weights. The file is hosted on GitHub Releases.
+
+```bash
+# Create the directory expected by the inference script
+mkdir -p saved_models
+
+# Download the model directly into the directory
+wget -O saved_models/best_model.pt "[https://github.com/yjyjyjy2016/Chisel/releases/download/v1/best_model.pt](https://github.com/yjyjyjy2016/Chisel/releases/download/v1/best_model.pt)"
+
 ## Quick Start: Inference
 
 ```bash
@@ -117,5 +128,6 @@ Both modes use the same RefinedModel checkpoint:
 ## License
 
 MIT License
+
 
 
