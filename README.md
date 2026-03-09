@@ -4,32 +4,8 @@ Chisel is a deep learning framework for partitioning complex protein assemblies 
 
 ## Architecture
 
-```
-Input: PDB/CIF structure
-         |
-    GPD Feature extraction (8 channels)
-         |
-    + 2 recycling channels (self-conditioning)
-         |
-  ┌──────────────────────────────────────┐
-  │  ChiselBackbone (dilated residual    │
-  │  CNN, configurable depth/width)      │
-  │  - Dilated residual blocks           │
-  │  - Windowed AxialAttention           │
-  │    every 4 layers (window=256)       │
-  │  - Gradient checkpointing support    │
-  └──────────┬───────────────────────────┘
-             |
-      feat (B,F,N,N)  +  A_hat_raw (B,2,N,N)
-             |                    |
-     ┌───────┼────────┐          |
-     |       |        |          |
-   VGAE    pLDDT   Boundary     |
- Refinement  Head    Head       |
-     |       |        |          |
-  A_refined plddt  boundary    adj + dist
-  (B,N,N) (B,1,N,N) (B,1,N)  (B,2,N,N)
-```
+<img width="8784" height="5558" alt="fig01" src="https://github.com/user-attachments/assets/d872dee5-fe72-4082-80e4-2251b4d33277" />
+
 
 ## Installation
 
@@ -141,3 +117,4 @@ Both modes use the same RefinedModel checkpoint:
 ## License
 
 MIT License
+
