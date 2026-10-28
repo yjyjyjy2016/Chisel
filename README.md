@@ -13,7 +13,7 @@ Chisel is a deep learning framework for partitioning complex protein assemblies 
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/Chisel.git
+git clone https://github.com/yjyjyjy2016/Chisel.git
 cd Chisel
 
 # Install dependencies
